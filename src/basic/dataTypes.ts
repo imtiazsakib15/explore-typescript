@@ -25,4 +25,10 @@
     age: 24,
     subject: "CSE",
   };
+
+  // never type
+  const throwError = (message: string): never => {
+    throw new Error(message);
+  };
+  // throwError("An Eror Occured!");
 }
