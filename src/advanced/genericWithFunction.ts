@@ -26,7 +26,16 @@
   });
 
   // Generic with a fixed value
-  const createStudentInstance = <T>(student: T): T & { dept: string } => {
+  interface Student {
+    id: number;
+    name: string;
+    age: number;
+    cgpa?: number;
+    isFailed?: boolean;
+  }
+  const createStudentInstance = <T extends Student>(
+    student: T
+  ): T & { dept: string } => {
     const dept: string = "CSE";
     return {
       ...student,
@@ -34,19 +43,14 @@
     };
   };
 
-  interface Student {
-    name: string;
-    age: number;
-    cgpa?: number;
-    isFailed?: boolean;
-  }
-
-  const student1 = createStudentInstance<Student>({
+  const student1 = createStudentInstance({
+    id: 1,
     name: "s1",
     age: 23,
     cgpa: 3.88,
   });
-  const student2 = createStudentInstance<Student>({
+  const student2 = createStudentInstance({
+    id: 2,
     name: "s2",
     age: 33,
     isFailed: true,
