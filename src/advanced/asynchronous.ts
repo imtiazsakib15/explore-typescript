@@ -15,9 +15,10 @@
     age: number;
   }
 
-  const getData = async <T>(param: T): Promise<void> => {
+  const getData = async <T>(param: T): Promise<T> => {
     const data: T = await getPromise(param);
     console.log({ data });
+    return data;
   };
   getData<string>(str);
   getData<User>(user);
