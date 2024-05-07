@@ -17,13 +17,13 @@
   /** Required */
   type requiredPerson = Required<Person>;
 
-  /** Recod */
+  /** Readonly */
   type readonlyPerson = Readonly<Person>;
 
   /** Partial */
   type PartialPerson = Partial<Person>;
 
   /** Record */
-  type RecodPerson = Record<string, unknown>;
+  type RecordPerson = Record<string, unknown>;
   const user = { name: "Sakib", age: 24 };
 }
